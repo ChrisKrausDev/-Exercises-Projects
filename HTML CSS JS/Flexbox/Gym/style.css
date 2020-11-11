@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #444;
+    height: 100vh;
+    width: 100vw;
+    font-family: arial;
+}
+
+ul,
+nav {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 35px 100px 0;
+}
+
+header h2 span {
+    color: #f36100;
+
+}
+
+header nav {
+    display: flex;
+}
+
+header nav li:first-child {
+    margin-left: 0;
+}
+
+header nav li:last-child {
+    margin-left: 0;
+}
+
+@media(max-width: 1000px) {
+    header {
+        padding: 20px 50px;
+    }
+}
+
+@media(max-width: 700px) {
+    header {
+        flex-direction: column;
+    }
+
+    header h2 {
+        margin-bottom: 15px;
+    }
+
+    header nav li {
+        margin: 0 7px;
+    }
+}
+
+/* baner area */
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 110px 100px;
+    color: #fff;
+}
+
+@media(max-width: 1000px) {
+    section {
+        padding: 100px 50px;
+    }
+}
+
+@media(max-width: 600px) {
+    section {
+        padding: 125px 30px;
+    }
+}
+
+section p {
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 35px;
+    padding: 0 20px;
+    line-height: 2;
+}
+
+.banner-area {
+    position: relative;
+    justify-content: center;
+    min-height: 100vh;
+    color: white;
+    text-align: center;
+}
+
+7:50 https: //www.youtube.com/watch?v=-03iS4qcr3k
