@@ -43,6 +43,7 @@ header nav {
 
 header nav li {
     margin: 0 15px;
+    cursor: pointer;
 }
 
 header nav li:first-child {
@@ -50,7 +51,18 @@ header nav li:first-child {
 }
 
 header nav li:last-child {
-    margin-left: 0;
+    margin-right: 0;
+}
+
+header nav li:hover {
+    animation: blick_li .2s both;
+}
+
+@keyframes blick_li {
+    25% {color: #fff;}
+    50% {color: #f36100;}
+    75% {color: #fff;}
+    100% {color: #f36100;}
 }
 
 @media(max-width: 1000px) {
@@ -151,10 +163,37 @@ section p {
 }
 
 .banner-area a.banner-btn {
+    position: relative;
     padding: 15px 35px;
     background-color: #f36100;
     text-transform: uppercase;
+    overflow: hidden;
 }
+
+a.banner-btn div {
+    position: absolute;
+    left: -55px;
+    width: 32%;
+    height: 3px;
+    background-color: #fff;
+    transition: .5s;
+}
+
+a.banner-btn:hover {
+    animation: blick .2s;
+}
+
+a.banner-btn:hover div {
+    left: 105px;
+}
+
+@keyframes blick {
+    25% {background-color: #fff;}
+    50% {background-color: #f36100;}
+    75% {background-color: #fff;}
+}
+
+
 
 @media (max-width: 800px) {
     .banner-area {
@@ -255,19 +294,34 @@ ul.services-content {
 }
 
 .services-content li {
+    display: flex;
+    flex-direction: column;
     padding: 0 30px;
     flex-basis: 33%;
-    text-align: center;
+    align-items: center;
 }
 
 /* to do zrobienia za pomocą flexboxa */
 
-.services-content div.img3 {
-    background-image: url(/images/3.jpg);
-    height: 25%;
-    width: 25%;
+.services-content div {
+    box-sizing: content-box;
+    height: 120px;
+    width: 120px;
     margin-bottom: 20px;
     border-radius: 50%;
+    background-size: cover;
+    border: 5px solid #f36100;
+}
+
+.services-content div.img3 {
+    background-image: url(/images/3.jpg);
+}
+.services-content div.img4 {
+    background-image: url(/images/4.jpg);    
+}
+
+.services-content div.img5 {
+    background-image: url(/images/5.jpg);    
 }
 
 .services-content li h4 {
