@@ -5,9 +5,6 @@
 }
 
 body {
-    background-color: #444;
-    height: 100vh;
-    width: 100vw;
     font-family: arial;
 }
 
@@ -42,6 +39,10 @@ header h2 span {
 
 header nav {
     display: flex;
+}
+
+header nav li {
+    margin: 0 15px;
 }
 
 header nav li:first-child {
@@ -79,7 +80,7 @@ section {
     flex-direction: column;
     align-items: center;
     padding: 110px 100px;
-    color: #fff;
+    color: white;
 }
 
 @media(max-width: 1000px) {
@@ -110,4 +111,244 @@ section p {
     text-align: center;
 }
 
-7:50 https: //www.youtube.com/watch?v=-03iS4qcr3k
+.banner-area .banner-img {
+    background-image: url(images/1.jpg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: -1;
+    background-position: center center;
+}
+
+.banner-area .banner-img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .5;
+}
+
+.banner-area h1 {
+    margin-bottom: 15px;
+    font-size: 65px;
+    text-transform: uppercase;
+}
+
+.banner-area h1 span {
+    color: #f36100;
+}
+
+.banner-area h3 {
+    font-size: 25px;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+.banner-area a.banner-btn {
+    padding: 15px 35px;
+    background-color: #f36100;
+    text-transform: uppercase;
+}
+
+@media (max-width: 800px) {
+    .banner-area {
+        min-height: 600px;
+    }
+
+    .banner-area h1 {
+        font-size: 27px;
+    }
+
+    .baner-area h3 {
+        font-size: 20px;
+    }
+
+    .baner-area a.banner-btn {
+        padding: 8px 20px;
+    }
+}
+
+/* about */
+
+#about {
+    background: #0a0a0a;
+}
+
+ul.about-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.about-content li {
+    padding: 20px;
+    height: 290px;
+    background-clip: content-box;
+    background-size: cover;
+    background-position: center;
+}
+
+.about-left {
+    flex-basis: 40%;
+    background-image: url(images/2.jpg);
+}
+
+.about-right {
+    flex-basis: 60%;
+}
+
+.about-area p {
+    max-width: 800px;
+    margin-bottom: 35px;
+    line-height: 1.5;
+    text-align: left;
+    padding-left: 0;
+}
+
+.section-title {
+    text-transform: uppercase;
+    font-size: 50px;
+    margin-bottom: 5%;
+}
+
+section-title span {
+    color: #f36100;
+}
+
+.about-right h2 {
+    margin-bottom: 3%;
+}
+
+@media (max-width: 1000px) {
+    .section-title {
+        font-size: 35 px;
+    }
+
+    .about-left,
+    .about-right {
+        flex-basis: 100%;
+    }
+
+    .about-content li {
+        padding: 8px;
+    }
+}
+
+/* services */
+
+#services {
+    background: #151515;
+}
+
+ul.services-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.services-content li {
+    padding: 0 30px;
+    flex-basis: 33%;
+    text-align: center;
+}
+
+/* to do zrobienia za pomocą flexboxa */
+
+.services-content div.img3 {
+    background-image: url(/images/3.jpg);
+    height: 25%;
+    width: 25%;
+    margin-bottom: 20px;
+    border-radius: 50%;
+}
+
+.services-content li h4 {
+    font-size: 20px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
+.services-content li p {
+    margin: 0;
+}
+
+@media (max-width: 1000px) {
+    .services-content li {
+        flex-basis: 100%;
+        margin-bottom: 65px;
+    }
+
+    .services-content li:last-child {
+        margin-bottom: 0;
+    }
+
+    .services-content li p {
+        padding: 0;
+    }
+}
+
+/* contact */
+
+#contact {
+    background: #0a0a0a;
+}
+
+ul.contact-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact-content li {
+    padding: 0 30px;
+    flex-basis: 33%;
+    text-align: center;
+}
+
+.contact-content li i {
+    font-size: 50px;
+    color: #f36100;
+    margin-bottom: 25px;
+}
+
+.contact-content li p {
+    margin: 0;
+}
+
+@media (max-width: 1000px) {
+    .contact-content li {
+        flex-basis: 100%;
+        margin-bottom: 65px;
+    }
+
+    .contact-content li:last-child {
+        margin-bottom: 0;
+    }
+
+    .contact-content li p {
+        padding: 0;
+    }
+}
+
+/* footer */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-color: #000;
+    padding: 60px 0;
+}
