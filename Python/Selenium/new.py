@@ -7,7 +7,7 @@ import time
 
 
 PATH = '/home/chris/chromedriver/chromedriver'
-driver = webdriver.Chrome(PATH) 
+driver = webdriver.Chrome(PATH)
 # define the path to chromedive file and set the chrome brwser to open this file
 
 driver.get('https://www.techwithtim.net/')
@@ -20,11 +20,13 @@ print(driver.title)
 # pisze tytuł strony w consoli
 
 search = driver.find_element_by_name("s")
+search.clear()
+# czyści pole tekstowe w razie, gdyby było coś w nim napisane
 search.send_keys("test")
 search.send_keys(Keys.RETURN)
 # wpisanie test w pole wyszukiwanie i klepnięcie entra
 
-try: 
+try:
     main = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.ID, "main"))
         # czeka 10 sekund aż element main się załaduje
@@ -33,9 +35,9 @@ try:
     for article in articles:
         header = article.find_element_by_class_name("entry-summary")
         print(header.text)
-finally: 
-    driver.quit() 
-    # ten blok kodu czeka, aż element zostanie załadowany zanim wykona się kolejne polecenie   
+finally:
+    driver.quit()
+    # ten blok kodu czeka, aż element zostanie załadowany zanim wykona się kolejne polecenie
 
 main = driver.find_element_by_id("main")
 
