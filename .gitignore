@@ -5,3 +5,9 @@ _images
 _sketch
 .vscode/
 .vscode
+*.jpeg
+*.jpg
+*.png
+*.zip
+*.rar
+
