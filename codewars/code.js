@@ -1,7 +1,17 @@
 'use strict'
 
-// 8 kyu
 // ############################################################
+
+//                      8 kyu
+
+// ############################################################
+
+
+
+
+
+
+
 
 // Quarter of the year
 ///////////////////////////////////////////////////////////////////
@@ -65,8 +75,9 @@
 // console.log(b); 
 
 // Gravity Flip (sort an array)
+///////////////////////////////////////////////////////////////////
 
-let arr = [1, 2, 33, 4, 3, 10, 5];
+// let arr = [1, 2, 33, 4, 3, 10, 5];
 
 // const flip = (d, a) => {
 //   let output = 0;
@@ -77,12 +88,74 @@ let arr = [1, 2, 33, 4, 3, 10, 5];
 
 
 
-const flip=(d, a)=>{
-return a.sort((x,y) => d === "R" ? x-y : y-x)
-}
+// const flip=(d, a)=>{
+// return a.sort((x,y) => d === "R" ? x-y : y-x)
+// }
 
-console.log(flip("R", arr));
+// console.log(flip("R", arr));
 
+// Filling an array (part 1)
+///////////////////////////////////////////////////////////////////
+// adding numbers to array
+
+// function arr(n) {
+//   let arr = [];
+//   for (let i = 0; i < n; i++) {
+//     arr.push(i);
+//   }
+//   return arr
+// }
+
+// console.log(arr(5));
+
+// A wolf in sheep's clothing
+///////////////////////////////////////////////////////////////////
+
+// let array =  ["sheep", "sheep", "sheep", "sheep", "sheep", "wolf", "sheep", "sheep"]
+
+
+// function warnTheSheep(queue) {
+//   let sheep = queue.length - queue.indexOf('wolf') - 1;
+//   return queue.indexOf('wolf') === queue.length - 1 ? `Pls go away and stop eating my sheep` : `Oi! Sheep number ${sheep}! You are about to be eaten by a wolf!`
+// }
+
+// // best practice / clever
+
+// function warnTheSheep(queue) {
+//   const position = queue.reverse().indexOf('wolf');
+//   return position === 0 ? 'Pls go away and stop eating my sheep' : `Oi! Sheep number ${ position }! You are about to be eaten by a wolf!`;
+// }
+
+// console.log(warnTheSheep(array));
+
+
+
+
+// ############################################################
+
+//                      7 kyu
+
+// ############################################################
+
+
+
+
+
+
+// Disemvowel Trolls (string manipulation)
+///////////////////////////////////////////////////////////////////
+
+
+// const str = "This website is for losers LOL!"
+
+// function disemvowel(str) {
+//   let a = str.replace(/A|E|I|O|U|a|e|i|o|u/g, '')
+//   return a
+// }
+// console.log(disemvowel(str));
+// disemvowel(str)
+
+// Regular expressions, regex, multiple
 
 
 
