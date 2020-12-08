@@ -130,11 +130,75 @@
 
 
 
+// Are You Playing Banjo?
+///////////////////////////////////////////////////////////////////
+// regex 
+
+// function areYouPlayingBanjo(name) {
+//   if (name.split("").indexOf('R') === 0 || name.split("").indexOf('r') === 0) {
+//     return `${name} plays banjo`;
+//   }
+//   return `${name} does not play banjo`;
+// }
+
+// // or
+
+// function areYouPlayingBanjo(name) {
+//   return name + (name[0].toLowerCase() == 'r' ? ' plays' : ' does not play') + " banjo";
+// }
+
+// // or
+
+// function areYouPlayingBanjo(name) {
+//   if (name[0].toLowerCase() === 'r') {
+//     return name + ' plays banjo';
+//   } else {
+//     return name + ' does not play banjo';
+//   }
+// }
+
+// // or
+
+// function areYouPlayingBanjo(name) {
+//   return name + (/^r/i.test(name) ? " plays " : " does not play ") + "banjo";
+// }
+
+
+// Invert values
+///////////////////////////////////////////////////////////////////
+
+// let numbers = [];
+
+// function invert(array) {
+//   let inverted = [];
+//   for (let i = 0; i < array.length; i++) {
+//     inverted.push(-array[i]);
+//   }
+//   return inverted;
+// }
+
+// console.log(invert(numbers));
+
+// // or .map()
+
+// function invert(array) {
+//   return array.map( x => x === 0 ? x : -x);
+// }
+
+// // or 
+
+// function invert(array) {
+//   return array.map(i => 0 - i);
+// }
+
+// // or
+
+// const invert = array => array.map(num => -num);
 
 // ############################################################
-
+//
 //                      7 kyu
-
+//
 // ############################################################
 
 
