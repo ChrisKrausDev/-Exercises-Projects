@@ -195,16 +195,36 @@
 
 // const invert = array => array.map(num => -num);
 
-// ############################################################
-//
-//                      7 kyu
-//
-// ############################################################
+//t My head is at the wrong end!
+
+/*
+
+// function fixTheMeerkat(arr) {
+//   return arr.reverse();
+// }
+
+function fixTheMeerkat(arr) {
+  return [arr[2], arr[1], arr[0]];
+}
+
+// const fixTheMeerkat = (arr) => {
+//   let x = []
+//   x.push(arr[2], arr[1], arr[0])
+//   return x
+// }
+ 
 
 
+console.log(fixTheMeerkat(["tail", "body", "head"]));
+
+*/
 
 
-
+// t############################################################
+// t                                                            
+// t                     7 kyu                                  
+// t                                                            
+// t############################################################
 
 // Disemvowel Trolls (string manipulation)
 ///////////////////////////////////////////////////////////////////
@@ -334,3 +354,90 @@ because three ‘true’ are returned for ‘5’, it will return ‘5’ which 
 
 // console.log(findOdd(a));
 
+//t Number to digit tiers 
+
+/*
+
+// 420 should return ["4", "42", "420"]
+// 2017 should return ["2", "20", "201", "2017"]
+// 2010 should return ["2", "20", "201", "2010"]
+
+// function createArrayOfTiers(num) {
+// let y = [];
+// let x = num
+//   .toString();
+
+// for (let i = 0; i < x.length ; i++) {
+//   y.push(x.slice(0, i + 1))
+// }
+
+//   return y
+// }
+
+
+//  tutaj dzięki spread operator mamy od razu tablicę z odpowiedniej ilości el (3 cyfry - 3 el) - i nastepnie .map() robi loop przez tablicę załóżmy 3 razy i za każdym loop dodaje value do stringa prev
+
+function createArrayOfTiers(num) {
+  let prev = '';
+  return [...num + ''].map((value) => { 
+      return prev += value;
+  });
+}
+
+console.log(createArrayOfTiers(420));
+
+// let x = 234
+// let prev = ''
+// console.log([...x + ''].map((value => prev = prev + value )));
+
+*/ 
+
+// t############################################################
+// t                                                            
+// t                     6 kyu                                  
+// t                                                            
+// t############################################################
+
+
+//t Replace With Alphabet Position
+//todo regex array methods map match charCodeAt()
+
+/*
+
+// Welcome.
+
+// In this kata you are required to, given a string, replace every letter with its position in the alphabet.
+
+// If anything in the text isn't a letter, ignore it and don't return it.
+
+function alphabetPosition(text) {
+  const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  let replaced = [];
+  text
+    .toLowerCase()
+    .split('')
+    .filter(mov => alphabet.includes(mov) ? replaced.push(alphabet.indexOf(mov) + 1) : 1)
+
+  return replaced.join(' ')
+}
+
+// 1.
+
+// const x = alphabetPosition("The sunset sets at twelve o' clock.");
+// console.log(x);
+
+// function alphabetPosition(text) {
+//   return text
+//     .toUpperCase()
+//     .match(/[a-z]/gi)
+//     .map( (c) => c.charCodeAt() - 64)
+//     .join(' ');
+// }
+
+// 2.
+
+// function alphabetPosition(text) {
+//   return text.match(/[a-zA-Z]/g).map( (el) => el.toLowerCase().charCodeAt() - 96 ).join(' ');
+// }
+
+*/
