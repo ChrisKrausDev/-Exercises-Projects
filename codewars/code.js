@@ -392,6 +392,214 @@ console.log(createArrayOfTiers(420));
 
 */ 
 
+//t Regex validate PIN code 
+
+/*
+
+let pinCheck = function validatePIN (pin) {
+  let reg = /^\d+$/;
+  let length = pin.toString().length;
+  console.log(length);
+  return reg.test(pin) && (length == 4 || length == 6)  ? true : false
+}
+
+console.log(pinCheck('2222'));
+
+function validatePIN(pin) {
+  return /^(\d{4}|\d{6})$/.test(pin)
+}
+
+*/
+
+//t Life Path Number 
+
+// from: "1879-03-14"
+
+// year: 1 + 8 + 7 + 9 = 25; 2 + 5 = 7
+// month: 0 + 3 = 3
+// day: 1 + 4 = 5
+// final result: 7 + 3 + 5 = 15; 1 + 5 = 6
+
+// solution framework
+
+    // 1. Sprowadzenie stringa do tablicy z trzema elementami typu int (rok, miesiąc, dzień)
+
+    // 2. Stworzenie nowej tablicy w której przechowane będą dodane do siebie cyft z każdego elementu z tablicy pierwotnej 
+
+    // 3/ Napisanie funkcji, której za argument podajemy liczkę, której cyfry zostaną zsumowane 
+
+      // Jeśli argument jest > 9 to odpal funkcje, jeśli w przedziale od 0-9 - return (agr). 
+      
+      // By zsumować cyfry składowe dowolnej liczby, należy z liczby stworzyć stringa, następnie z tego stringa stworzyć tabele, następnie oddzielne stringi tej tabeli zmienić na typ Number
+
+      // 
+    // 4. dodanie do siebie trzech elementów 
+
+//todo rozwiązanie z neta: 
+
+// const birthDate = "1879-03-14"
+
+// const reduceToOne = (x) => {
+//   if (x > 9) {
+//     let digits = x.toString().split('').map(mov => parseInt(mov));
+//     let y = digits.reduce((a, b) => a + b);
+//     return reduceToOne(y)
+//   }
+
+//   return x;
+
+// }
+
+// const lifePathNumber = (dateOfBirth) => {
+//   let arr = dateOfBirth
+//     .split('-')
+//     .map(mov => parseInt(mov)); // [1879, 3, 14]
+//   let arr2 = arr.map(mov => reduceToOne(mov));
+//   return reduceToOne(arr2.reduce((a, b) => a + b));
+// }
+  
+//todo ------------------- moje rozwiązanie: 
+
+// const birthDate = "1879-03-14"
+
+// const reduceToOne = (num) => {
+//   if (num > 9) {
+//     let arr = num.toString().split('').map(mov => Number(mov));
+//     let reduced = arr.reduce((a,b) => a+b)
+//     return reduceToOne(reduced)
+//   }
+
+//   return num
+// } 
+
+// const lifePathNumber = function (birthDate) {
+//   let dateOfBirth = birthDate
+//     .split('-')
+//     .map(mov => +mov)
+//   let numbers = dateOfBirth.map(mov => reduceToOne(mov));
+//   let lpn = numbers.map(mov => reduceToOne(mov));
+//   let y = lpn.reduce((a,b) => a+b);
+
+//   return reduceToOne(y)
+// }
+
+
+//---------------- to samo: 
+
+// function lifePathNumber(dateOfBirth) {
+//   return dateOfBirth.replace(/\D/g,'') % 9 || 9;
+// }
+
+//----------------
+
+// function lifePathNumber(dateOfBirth) {
+//   var num = dateOfBirth.split("-").join("");
+//   console.log(num);
+  
+//   do {
+//     num = (""+num).split("").reduce((p,c) => +p+ +c);
+//   } while(num > 9);
+  
+//   return num;
+// }
+
+// function lifePathNumber(dateOfBirth) {
+
+//   var number = dateOfBirth.split('-').join("");
+  
+//   do {
+//   number = (''+number).split('').reduce((a,b) => +a + +b)
+//   console.log('number2 ->', number);
+
+//   } while (number > 9);
+
+//   return number
+// };
+// //-----------------
+
+// console.log(lifePathNumber(birthDate));
+
+//t Correct the time-string
+
+// Null or Empty
+//  Test.assertEquals(timeCorrect(null), null);
+//  Test.assertEquals(timeCorrect(""), "");
+
+// Invalid Format
+//  Test.assertEquals(timeCorrect("001122"), null);
+//  Test.assertEquals(timeCorrect("00;11;22"), null);
+//  Test.assertEquals(timeCorrect("0a:1c:22"), null);
+
+// // Correction Tests
+//  Test.assertEquals(timeCorrect("09:10:01"), "09:10:01");
+//  Test.assertEquals(timeCorrect("11:70:10"), "12:10:10");
+//  Test.assertEquals(timeCorrect("19:99:09"), "20:39:09");
+//  Test.assertEquals(timeCorrect("19:99:99"), "20:40:39");
+//  Test.assertEquals(timeCorrect("24:01:01"), "00:01:01");
+//  Test.assertEquals(timeCorrect("52:01:01"), "04:01:01");
+
+// 1. Przetwarzać tylko dane z tymi znakami: 0-9 oraz :, w przypadku błednego formatu - return null oraz dodatkowo jak wyżej
+
+
+let resetTime = (string) => {
+/*
+  let sec = 59    if sec > 59 ? correctSec = sec - 99 AND +1 MIN : corSec = sec
+
+  let min = 59    if min > 59 ? correctMin = min - 99 AND +1 hour : corMin = min 
+
+  let hours = 24  if hours > 23 ? 0
+  
+*/
+  let arr = string.split(':');
+  let hour = arr[0];
+  let min = arr[1];
+  let sec = arr[2];
+ 
+  let addMin = 0
+  let addHour = 0
+
+  console.log('arrs -> ', hour, min, sec);
+
+  if (sec > 59) {
+    sec = sec - 59
+    addMin = 1;
+  } else {
+    sec = sec
+  }
+
+  if (min > 59) {
+    min = min - 59
+    console.log(addMin);
+    addMin > 0 ? min + 1 : 1; 
+    addHour = 1;
+  } else {
+    addMin === 1 ? +min + 1 : min + 1;
+    console.log(addMin);
+    console.log(addMin === 1);
+  }
+
+  hour > 23 ? hour = ''+0 : hour = ''+hour;
+
+
+  console.log('time after -> ', hour, min, sec);
+}
+
+function timeCorrect(timestring) {
+
+let acceptableFormat = /^([0-9]?[0-9]|2[0-9]):([0-9][0-9])(:[0-9][0-9])?$/.test(timestring);
+
+  if (acceptableFormat) {
+    return resetTime(timestring);
+  } if (timestring === '') {
+    return '';
+  } return null;
+}
+
+console.log(timeCorrect("25:12:70"));
+// console.log(timeCorrect("19:99-09"));
+
+// console.log(("00:00:00").split(':'));
+
 // t############################################################
 // t                                                            
 // t                     6 kyu                                  
@@ -439,5 +647,35 @@ function alphabetPosition(text) {
 // function alphabetPosition(text) {
 //   return text.match(/[a-zA-Z]/g).map( (el) => el.toLowerCase().charCodeAt() - 96 ).join(' ');
 // }
+
+*/
+
+//t sort the odd 
+//todo moving element in array 
+
+/*
+
+// You will be given an array of numbers. You have to sort the odd numbers in ascending order while leaving the even numbers at their original positions.
+
+// examples
+
+// [7, 1]  =>  [1, 7]
+// [5, 8, 6, 3, 4]  =>  [3, 8, 6, 5, 4]
+// [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]  =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
+
+const oddsArr = [5, 3, 2, 8, 1, 4];
+
+// 1. Stworzyć tabelę z nieparzystymi elementami
+// 2. Posortować tabelę z niep el w rosnącej kolejności
+// 3. Loop przez tabele i przy negatywnych wstawić je z tabeli odd:
+
+function sortArray(array) {
+  const odd = array.filter(x => x % 2).sort((a, b) => a - b);
+  console.log(odd);
+  return array.map(x => x % 2 ? odd.shift() : x);
+  // 1%2 = 1 czyli true czyli dla neg wstaw pierwszy element z tabeli odd
+}
+
+console.log(sortArray(oddsArr));
 
 */
