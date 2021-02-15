@@ -520,6 +520,7 @@ function validatePIN(pin) {
 // console.log(lifePathNumber(birthDate));
 
 //t Correct the time-string
+//todo time formating, regex 
 
 // Null or Empty
 //  Test.assertEquals(timeCorrect(null), null);
@@ -540,49 +541,63 @@ function validatePIN(pin) {
 
 // 1. Przetwarzać tylko dane z tymi znakami: 0-9 oraz :, w przypadku błednego formatu - return null oraz dodatkowo jak wyżej
 
+//todo mój program, działający, bez refaktoryzacji 
+
+/* 
+
+let addMin = 0
+let addHour = 0
+
+let decToTime = (number, index) => {
+   number = +number + addMin
+   index == 2 && addMin > 0 ? addHour = 1 : 1;
+   addMin = 0;
+
+   if (index == 2 && number > 23) 
+   {
+
+    do 
+    {
+    number = number - 24;
+    number < 10 ? number = '0' + number : 1;
+    }
+    while (number > 24)
+    return number;
+
+   } else if (index == 2 && number < 24) 
+
+   {
+      number < 10 ? number = '0' + number : 1;
+      return number;
+   }
+
+   if (number > 59) 
+   {
+     number = number - 60;
+     addMin = 1;
+     index == 2 && addHour > 0 ? number = number + addHour : 1; 
+     number < 10 ? number = '0' + number : 1;
+     return number;
+
+   } else {
+
+     number = +number + addMin;
+     number < 10 ? number = '0' + number : number;
+     return number;
+   }
+};
 
 let resetTime = (string) => {
-/*
-  let sec = 59    if sec > 59 ? correctSec = sec - 99 AND +1 MIN : corSec = sec
 
-  let min = 59    if min > 59 ? correctMin = min - 99 AND +1 hour : corMin = min 
+  let arr = string.split(':').reverse();
 
-  let hours = 24  if hours > 23 ? 0
-  
-*/
-  let arr = string.split(':');
-  let hour = arr[0];
-  let min = arr[1];
-  let sec = arr[2];
- 
-  let addMin = 0
-  let addHour = 0
+  let convertedArray = arr.map(function(mov, i) {   
+    return decToTime(mov, i)
+  }); 
+  let end = convertedArray.reverse().join(':');
+  return end;
 
-  console.log('arrs -> ', hour, min, sec);
-
-  if (sec > 59) {
-    sec = sec - 59
-    addMin = 1;
-  } else {
-    sec = sec
   }
-
-  if (min > 59) {
-    min = min - 59
-    console.log(addMin);
-    addMin > 0 ? min + 1 : 1; 
-    addHour = 1;
-  } else {
-    addMin === 1 ? +min + 1 : min + 1;
-    console.log(addMin);
-    console.log(addMin === 1);
-  }
-
-  hour > 23 ? hour = ''+0 : hour = ''+hour;
-
-
-  console.log('time after -> ', hour, min, sec);
-}
 
 function timeCorrect(timestring) {
 
@@ -595,10 +610,61 @@ let acceptableFormat = /^([0-9]?[0-9]|2[0-9]):([0-9][0-9])(:[0-9][0-9])?$/.test(
   } return null;
 }
 
-console.log(timeCorrect("25:12:70"));
+console.log(timeCorrect('24:99:22'));
 // console.log(timeCorrect("19:99-09"));
 
 // console.log(("00:00:00").split(':'));
+
+*/
+
+//todo analogiczny przykład: 
+
+function timeCorrect(timestring) {
+  if(!timestring) {
+      return timestring;
+  };
+  
+  if (!/\d\d:\d\d:\d\d/.test(timestring)) {
+    return null
+ }
+ let arr = timestring.split(':');
+ 
+  if(arr[2] > 59) {
+      var least = Math.floor(arr[2] / 60);
+
+        // jeżeli zapis będzie błędny (ponad 59, np 79), to funkcja Math.floor(79 / 60); zwróci zaokrąglenie w dół w zakresie od 99/60 do 0/60 będzie to zawsze albo 1 albo 0! 
+
+      arr[2] = arr[2] % 60;
+      arr[1] = 1*arr[1] + least;
+
+        // przekonwertowanie arr[1] (minuty) na number oraz dodanie reszty z sekund (jeśli istnieje)
+  }
+  if(arr[1] > 59) {
+      least = Math.floor(arr[1] / 60);
+      arr[1] = arr[1] % 60;
+
+      arr[0] = 1*arr[0] + least;
+
+        // dodanie ewentualnej reszty z minut do godzin
+
+      console.log(arr[0]);
+  }
+  if(arr[0] > 23) {
+      arr[0] = arr[0] % 24;
+
+        // modulo 24 z dowolnej godziny zawsze poda resztę, odpowiadającą prawidłowemu przeliczeniu godzin
+
+  }
+  
+  return arr.map(function(item){
+      if (item < 10) {
+          item = '0' + item;
+      }
+      return item;
+  }).join(':');
+};
+
+console.log(timeCorrect('22:99:99'));
 
 // t############################################################
 // t                                                            
