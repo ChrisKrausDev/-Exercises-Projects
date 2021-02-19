@@ -619,6 +619,8 @@ console.log(timeCorrect('24:99:22'));
 
 //todo analogiczny przykład: 
 
+/*
+
 function timeCorrect(timestring) {
   if(!timestring) {
       return timestring;
@@ -665,6 +667,63 @@ function timeCorrect(timestring) {
 };
 
 console.log(timeCorrect('22:99:99'));
+
+*/
+
+//t Spoonerize Me 
+
+// function spoonerize(words) {
+  
+//   let arr = words.split(' ');
+//   let first = arr[0].charAt(0);
+//   let second = arr[arr.length -1].charAt(0);
+
+//   arr = arr.map((mov, i) => {
+//     return i == 0 ? mov.replace(mov[0], second) : i == arr.length-1 ? mov.replace(mov[0], first) : 1;
+//   });
+//   return arr.join(' ')
+// };
+
+
+// let Test;
+
+//  Test.describe("Basic Tests", function() {
+//   Test.assertEquals(spoonerize("nit picking"), "pit nicking");
+//   Test.assertEquals(spoonerize("wedding bells"), "bedding wells");
+//   Test.assertEquals(spoonerize("jelly beans"), "belly jeans");
+// });
+
+// function spoonerize(words) {
+//   let word = words.split(' ');
+//   console.log(word[0].slice(1));
+//   return [word[1][0] + word[0].slice(1), word[0][0] + word[1].slice(1)].join(' ')
+// }
+
+// console.log(spoonerize("nit picking"));
+
+//t Double Trouble 
+// i-- o jeden wstecz w tabeli podczas pętli
+// one iteration back by for loop
+
+let trouble = (x, y) => { 
+
+  for (let i=0; i<x.length; i++) {
+    console.log(i);
+    if (x[i] + x[i+1] === y) {
+      x.splice(i+1, 1);
+      i--; // go one iteration back to check condition with new numbers after deleting x[x+1];
+    }
+  }
+
+  return x;
+};
+
+
+let arr = [4, 1, 1, 1, 4];
+
+console.log(trouble(arr, 2));
+
+// console.log(arr.slice([], 1));
 
 // t############################################################
 // t                                                            
