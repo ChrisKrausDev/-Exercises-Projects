@@ -946,3 +946,110 @@ function likes(names) {
 */
 
 // console.log(likes(['Krzysztof', 'Mariusz']));
+
+//t Title Case 
+
+/*
+
+function titleCase(title, minorWords) {
+  let arr = title.toLowerCase().split(' ');
+  let output = [];
+
+  if (minorWords) {
+    
+    arr.map((mov, i) => {
+      if (i == 0) {
+        output.push(mov[0].toUpperCase() + mov.slice(1))
+      } else {
+      minorWords.toLowerCase().split(' ').includes(mov) && i > 0 ? output.push(mov) : output.push(mov[0].toUpperCase() + mov.slice(1));
+      }
+    })
+    
+  } else {
+     arr.map((mov, i) => {
+        output.push(mov[0].toUpperCase() + mov.slice(1))
+       });
+  }
+
+  return output.join(' ');
+};
+
+// console.log(['into', 'a', 'b'].includes('in')); !!!!!
+
+*/
+
+//todo best practice: 
+
+/*
+
+function titleCase(title, minorWords) {
+  var minorWords = typeof minorWords !== "undefined" ? minorWords.toLowerCase().split(' ') : [];
+
+    // jeśli minorWords jest różny od undefined - przypisz jako 'minorWords.toLowerCase().split(' ')', jeśli undefined przypisz pustą tablice 
+
+  return title.toLowerCase().split(' ').map(function(v, i) {
+    if(v != "" && ( (minorWords.indexOf(v) === -1) || i == 0)) {
+      v = v.split('');
+      v[0] = v[0].toUpperCase();
+      v = v.join('');
+    }
+    return v;
+  }).join(' ');
+}
+
+console.log(titleCase("First a of in", "an often into")); // expected "First A Of In"
+
+*/
+
+
+//  Test.assertEquals(titleCase('a clash of KINGS', 'a an the of'), 'A Clash of Kings')
+//  Test.assertEquals(titleCase('THE WIND IN THE WILLOWS', 'The In'), 'The Wind in the Willows')
+//  Test.assertEquals(titleCase('the quick brown fox'), 'The Quick Brown Fox')
+
+
+//t IQ Test 
+
+// moje
+
+/*
+
+function iqTest(numbers){
+  let odd = 0;
+  let even = 0;
+  let x;
+  let arr = numbers.split(' ');
+  arr.forEach(mov => mov % 2 ? odd += 1 : even += 1);
+  odd == 1 ? arr.forEach((mov, i) => mov % 2 ? x = i+1 : 1) : arr.forEach((mov, i) => mov % 2 == 0 ? x = i+1 : 1);
+  return x
+  
+}
+
+*/
+
+// better: 
+
+/*
+
+function iqTest(numbers){
+  numbers = numbers.split(' ')
+  
+  var evens = []
+  var odds = []
+  
+  for (var i = 0; i < numbers.length; i++) {
+    if (numbers[i] & 1) {
+
+      // Because the number 1 bits are 00000001, when number & 1, will keep the number last bit is previous, and others bit change to 0.
+
+      // So if the number is odd, the last bit will be 1, the number & 1 result will be 1. Otherwise, the last bit will be 0, the result will be 0.
+
+      odds.push(i + 1)
+    } else {
+      evens.push(i + 1)
+    }
+  }
+  
+  return evens.length === 1 ? evens[0] : odds[0]
+}
+
+*/
