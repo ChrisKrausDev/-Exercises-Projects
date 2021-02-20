@@ -273,26 +273,10 @@ console.log(fixTheMeerkat(["tail", "body", "head"]));
 // console.log(songDecoder("AWUBWUBWUBBWUBWUBWUBC"));
 // console.log(songDecoder("WUBAWUBBWUBCWUB"));
 
-// Unique In Order:
 
-// var uniqueInOrder=function(iterable) {
-// 	var list = iterable.split("");
-// 	var list2 = [];
-// 	  for (i = 0; i < list.length; i++) {
-// 		if (list[i] === list[i+1]) {
-// 		   continue;
-// 		  } else {
-// 			list2.push(list[i]);
-// 		  }
-// 	  }
-// 	return list2;
-	
-//   }
 
-// console.log(uniqueInOrder('AAAABBBCCDAABBB'));
-// console.log(uniqueInOrder([1, 2, 3]));
 
-// Equal Sides Of An Array
+//t Equal Sides Of An Array
 ////////////////////////////////////////////////////////////
 
 // function findEvenIndex(arr)
@@ -705,6 +689,8 @@ console.log(timeCorrect('22:99:99'));
 // i-- o jeden wstecz w tabeli podczas pętli
 // one iteration back by for loop
 
+/*
+
 let trouble = (x, y) => { 
 
   for (let i=0; i<x.length; i++) {
@@ -725,12 +711,66 @@ console.log(trouble(arr, 2));
 
 // console.log(arr.slice([], 1));
 
+*/
+
 // t############################################################
 // t                                                            
 // t                     6 kyu                                  
 // t                                                            
 // t############################################################
 
+
+//t Unique In Order:
+//todo array filter 
+/*
+
+const uniqueInOrder=function(iterable) {
+  let output = [];
+
+  const arrProcessing = (arr) => {
+    for (let i = 0; i < arr.length; i++) {
+		if (arr[i] === arr[i+1]) {
+		   continue;
+		  } else {
+			output.push(arr[i]);
+		  }
+	  }
+    return output;
+  }
+
+  typeof iterable == 'object' ? arrProcessing(iterable) : arrProcessing(iterable.split(''));
+
+return output;
+}
+
+console.log(uniqueInOrder('AAAABBBCCDAABBB'));
+console.log(uniqueInOrder([1, 1, 2, 3]));
+
+*/ 
+
+  //todo better way:
+
+/*
+  
+  function uniqueInOrder(it) {
+    var result = []
+    var last
+    
+    for (var i = 0; i < it.length; i++) {
+      if (it[i] !== last) {
+        result.push(last = it[i]) //fixme good practice 
+      }
+    }
+    
+    return result
+  };
+  
+*/
+
+  //todo also good one #filter #[...] 
+
+  
+// const uniqueInOrder = d => [...d].filter((x, i, a) => x != a[i + 1])
 
 //t Replace With Alphabet Position
 //todo regex array methods map match charCodeAt()
@@ -804,3 +844,105 @@ function sortArray(array) {
 console.log(sortArray(oddsArr));
 
 */
+
+//t Format a string of names like 'Bart, Lisa & Maggie'
+
+// objects operations
+
+/*
+
+let obj = ([{name: 'Bart'},{name: 'Lisa'},{name: 'Maggie'}]);
+
+  let output = [];
+  let oLth = obj.length;
+
+  for (let i = 0; i < obj.length; i++) {
+    i == oLth -1 || i == oLth -2 ? output.push(obj[i].name) : output.push(obj[i].name + ',')
+    i == oLth -2 ? output.push('&') : 1;
+  }
+
+console.log(output.join(' '));
+
+*/
+
+//t Who likes it? 
+
+// first atempt with switch case: 
+
+/*
+
+function likes(names) {
+  
+  let output;
+  
+  switch (true) {
+      case (names.length == 0):
+        output = 'no one likes this';
+        break
+      case (names.length == 1):
+        output = `${names[0]} like this`;
+        break
+      case names.length == 2:
+        output = `${names[0]} and ${names[1]} like this`;
+        break
+      case names.length == 3:
+        output = `${names[0]}, ${names[1]} and ${names[2]} like this`;
+        break
+      case names.length > 3:
+        output = `${names[0]}, ${names[1]} and ${names.length - 2} others like this`;
+        break
+      
+  }
+  
+  return output;
+}
+
+*/ 
+
+// atempt with Math.min()
+
+/*
+
+function likes(names) {
+  return {
+    0: 'no one likes this',
+    1: `${names[0]} likes this`, 
+    2: `${names[0]} and ${names[1]} like this`, 
+    3: `${names[0]}, ${names[1]} and ${names[2]} like this`, 
+    4: `${names[0]}, ${names[1]} and ${names.length - 2} others like this`, 
+  }[Math.min(4, names.length)]
+
+  //todo [Math.min(4, names.length)] 
+
+  // This will either be 0-4 with anything more than four being 4. From there that value dictates which template in the return object to use...
+
+  // return {1: "I'm value one"}[1]
+
+// this gives you "I'm value one"
+
+}
+
+let names = ['Krzysztof', 'Mariusz'];
+
+// console.log('Math.min() -', Math.min(4, names.length));
+
+/*
+
+// another switch atempt: more readable: 
+
+/*
+
+function likes(names) {
+  names = names || [];
+  switch(names.length){
+    case 0: return 'no one likes this'; break;
+    case 1: return names[0] + ' likes this'; break;
+    case 2: return names[0] + ' and ' + names[1] + ' like this'; break;
+    case 3: return names[0] + ', ' + names[1] + ' and ' + names[2] + ' like this'; break;
+    default: return names[0] + ', ' + names[1] + ' and ' + (names.length - 2) + ' others like this';
+  }
+}
+
+*/
+
+// console.log(likes(['Krzysztof', 'Mariusz']));
