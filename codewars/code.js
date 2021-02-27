@@ -7,8 +7,26 @@
 // ############################################################
 
 
+//t Pre-FizzBuzz Workout #1
 
+// function preFizz(n) {
+//   let arr = [];
+//   for (i=0; i < n; i++) {
+//     arr.push(i+1)
+//   };
+//   return arr
+// }
 
+// or
+
+// const preFizz = n => Array.from({length: n}, (_, i) => i + 1)
+
+// or 
+
+// let preFizz = n => [...Array(n)].map((x, i) => i+1);
+
+// preFizz(1);
+// preFizz(8);
 
 
 
@@ -219,6 +237,22 @@ console.log(fixTheMeerkat(["tail", "body", "head"]));
 
 */
 
+//t sum of positive 
+
+function positiveSum(arr) {  
+  let x;
+  x = arr.filter(mov => mov > 0);
+  return x.length ? x.reduce((a,b) => a+b) : 0;
+  }
+
+let array = [1,-1,2,-2,3,4,5,10];
+
+// console.log(positiveSum(array));
+
+console.log(array);
+
+
+
 
 // t############################################################
 // t                                                            
@@ -226,7 +260,25 @@ console.log(fixTheMeerkat(["tail", "body", "head"]));
 // t                                                            
 // t############################################################
 
-// Disemvowel Trolls (string manipulation)
+
+//t Sort by Last Char: 
+// todo sorting alphabeticaly by last char 
+
+// users.sort(function(a, b){
+//     if(a.firstname < b.firstname) { return -1; }
+//     if(a.firstname > b.firstname) { return 1; }
+//     return 0;
+// })
+
+let last = (x) => x.split(' ').sort((a, b) => a.charCodeAt(a.length -1) - b.charCodeAt(b.length -1));
+
+console.log(last('man i need a taxi up to ubud'));
+
+
+let xyz = ['aaz', 'aamac', 'ajb', 'waja'];
+console.log((xyz[0].charCodeAt(0)));
+
+//t Disemvowel Trolls (string manipulation) 
 ///////////////////////////////////////////////////////////////////
 
 
@@ -1026,6 +1078,19 @@ function iqTest(numbers){
 
 */
 
+// another approach:
+
+function iqTest(numbers){
+  let odd = [];
+  let even = [];
+  let x;
+  let arr = numbers.split(' ');
+  
+  arr.forEach(mov => mov % 2 ? odd.push(mov) : even.push(mov));
+  x = odd.length == 1 ? odd[0] : even[0];
+  return toString(x);
+}
+
 // better: 
 
 /*
@@ -1053,3 +1118,6 @@ function iqTest(numbers){
 }
 
 */
+
+iqTest("2 4 7 8 10");
+iqTest("1 2 2");
