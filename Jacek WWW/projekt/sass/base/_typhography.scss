@@ -1,0 +1,38 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.heading-primary {
+  position: relative;
+  color: $color-medium-white;
+
+  &--main {
+    position: absolute;
+    top: 30rem;
+    left: 10rem;
+    width: 40rem;
+    height: 5rem;
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($color-violet, 0.85),
+      rgba($color-medium-ruby, 0.85)
+    );
+  }
+
+  &--sub {
+    position: absolute;
+    display: block;
+    top: 40rem;
+    left: 10rem;
+    width: 50rem;
+    height: 7rem;
+    line-height: 7rem;
+    text-align: center;
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($color-violet, 0.85),
+      rgba($color-medium-ruby, 0.85)
+    );
+    transform: skew(-10deg);
+  }
+}

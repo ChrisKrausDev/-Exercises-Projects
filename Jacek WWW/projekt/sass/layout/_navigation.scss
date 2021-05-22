@@ -1,0 +1,51 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $nav-height;
+  position: relative;
+  top: 3rem;
+  padding: 0 15rem 0 15rem;
+  background-color: rgba(0, 0, 0, 0.75);
+  font-size: 2rem;
+  color: white;
+  z-index: 1;
+
+  &__logo {
+    font-size: 3.5rem;
+    color: $color-medium-white;
+    span {
+      color: $color-orange;
+      font-weight: bold;
+    }
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 5rem;
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      display: inline-block;
+      text-decoration: none;
+      cursor: pointer;
+      color: $color-medium-white;
+      transition: all 0.2s;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-orange;
+      background-color: rgba($color-orange, 0.03);
+      box-shadow: 0 0 1.5rem rgba($color-orange, 0.05);
+    }
+  }
+}

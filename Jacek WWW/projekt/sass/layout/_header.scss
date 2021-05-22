@@ -1,0 +1,17 @@
+.header {
+  height: 100vh;
+  position: relative;
+  top: -7rem;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(0, 0, 0, 0.01),
+      rgba($color-blackish, 0.1)
+    ),
+    url(/images/img1.jpg);
+  background-size: cover;
+  background-position: center;
+
+  &__text-box {
+    // position: absolute;
+  }
+}
