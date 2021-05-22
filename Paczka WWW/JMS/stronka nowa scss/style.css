@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+/* font-family: "Montserrat", sans-serif; */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap");
+/* font-family: 'Montserrat', sans-serif; */
+
+/* Blackish: #202020
+
+Dark Grey: #3F3F3F
+
+Medium Grey: #707070
+
+Egg Yellow: #ffdf6c
+
+White: #edf0f1 */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  background-color: #202020;
+}
+
+.logo,
+li,
+a,
+button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #edf0f1;
+}
+
+.logo {
+  color: #ffdf6c;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.nav__wrapper {
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10px;
+}
+
+.nav__links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav__links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+  color: #ffdf6c;
+}
+
+button {
+  padding: 9px 25px;
+  background-color: rgba(63, 63, 63, 1);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover {
+  background-color: rgba(255, 223, 108, 0.8);
+  color: #3f3f3f;
+}

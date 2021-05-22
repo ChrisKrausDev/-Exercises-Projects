@@ -1,270 +1,202 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 /* font-family: 'Roboto', sans-serif; */
 
-/* Color Theme Swatches in Hex */
-.color-theme_991c692bae8dcba2edd7fcc7a4ec711c-1-hex { color: #434B56; }
-.color-theme_991c692bae8dcba2edd7fcc7a4ec711c-2-hex { color: #626F82; }
-.color-theme_991c692bae8dcba2edd7fcc7a4ec711c-3-hex { color: #C8C2B6; }
-.color-theme_991c692bae8dcba2edd7fcc7a4ec711c-4-hex { color: #E0E0D8; }
-.color-theme_991c692bae8dcba2edd7fcc7a4ec711c-5-hex { color: #ECECEA; }
+/* Blackish: #202020
 
-/* Color Theme Swatches in RGBA */
-.color-theme_991c692bae8dcba2edd7fcc7a4ec711c-1-rgba { color: rgba(67, 75, 86, 1); }
-.color-theme_991c692bae8dcba2edd7fcc7a4ec711c-2-rgba { color: rgba(98, 111, 130, 1); }
-.color-theme_991c692bae8dcba2edd7fcc7a4ec711c-3-rgba { color: rgba(200, 194, 182, 1); }
-.color-theme_991c692bae8dcba2edd7fcc7a4ec711c-4-rgba { color: rgba(224, 224, 216, 1); }
-.color-theme_991c692bae8dcba2edd7fcc7a4ec711c-5-rgba { color: rgba(236, 236, 234, 1); }
+Dark Grey: #3F3F3F
 
-/* Color Theme Swatches in HSLA */
-.color-theme_991c692bae8dcba2edd7fcc7a4ec711c-1-hsla { color: hsla(214, 12, 30, 1); }
-.color-theme_991c692bae8dcba2edd7fcc7a4ec711c-2-hsla { color: hsla(215, 14, 44, 1); }
-.color-theme_991c692bae8dcba2edd7fcc7a4ec711c-3-hsla { color: hsla(39, 14, 74, 1); }
-.color-theme_991c692bae8dcba2edd7fcc7a4ec711c-4-hsla { color: hsla(60, 11, 86, 1); }
-.color-theme_991c692bae8dcba2edd7fcc7a4ec711c-5-hsla { color: hsla(60, 5, 92, 1); }
+Medium Grey: #707070
+
+Egg Yellow: #ffdf6c
+
+White: #FFFFFF */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #E0E0D8;
-    font-family: 'Roboto', sans-serif;
-    overflow-x: hidden;
+  background-color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
 }
 
 header {
-    display: flex;
-    position: fixed;
-    height: 70px;
-    left: 0;
-    right: 0;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #050A0D;
-    box-shadow:  3px 0 30px 5px #050A0D;
-    z-index: 1;
+  display: flex;
+  position: fixed;
+  height: 70px;
+  left: 0;
+  right: 0;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #202020;
+  box-shadow: 3px 0 30px 5px #202020;
+  z-index: 1;
 }
 
 .logo {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 50px;
-    color: #C8C2B6;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 50px;
+  color: #ffdf6c;
+}
+
+li {
+  list-style: none;
 }
 
 .menu li a {
-    margin-left: 30px;
-    list-style: none;
-    text-decoration: none;
-    color:#ECECEA;
-    font-size: 16px;
-    font-weight: 900;
-    text-transform: uppercase;
-    transition: .3s;
+  margin-left: 30px;
+  list-style: none;
+  text-decoration: none;
+  color: #ececea;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  transition: 0.3s;
 }
 
 .menu li a:hover {
-    color: #626F82;
+  color: #ffdf6c;
 }
 
 main .home {
-    height: 100vh;
-    background-image: url('/images/nathan-riley-9q3I8XhesQI-unsplash.jpg');
-    background-position: top;
-    background-size: cover;
-    box-shadow:  3px 0 30px 5px #050A0D;
+  height: 100vh;
+  background-image: url("/images/nathan-riley-9q3I8XhesQI-unsplash.jpg");
+  background-position: top;
+  background-size: cover;
+  box-shadow: 3px 0 30px 5px #050a0d;
 }
 
 .home .text {
-    position: absolute;
-    bottom: 300px;
-    left: 200px;
-    color: black;
+  position: absolute;
+  bottom: 300px;
+  left: 200px;
+  color: black;
 }
 
 .text div:nth-child(1),
 .text div:nth-child(2) {
-    position: absolute;
-    padding: 10px 40px;
-    text-align: center;
-    font-size: 26px;
-    background-color:  rgba(98, 111, 130, .7); 
+  position: absolute;
+  padding: 10px 40px;
+  text-align: center;
+  font-size: 26px;
+  background-color: rgba(98, 111, 130, 0.7);
 }
 
 .text div:nth-child(1) {
-    top: -60px;
-    left: -120px;
-    width: 500px;
-    
+  top: -60px;
+  left: -120px;
+  width: 500px;
 }
 
 .text div:nth-child(2) {
-    left: 0;
-    width: 650px;
+  left: 0;
+  width: 650px;
 }
 
-
 .text .btn {
-    position: absolute;
-    top: 110px;
-    left: 20px;
-    width: 260px;
-    height: 50px;
-    padding: 0 20px;
-    text-align: center;
-    line-height: 50px;
-    background-color: rgba(67, 75, 86, .3);;
-    border: 3px solid white;
-    cursor: pointer;
-    color: white;
-    font-size: 26px;
-    font-weight: 900;
-    transition: .3s;
+  position: absolute;
+  top: 110px;
+  left: 20px;
+  width: 260px;
+  height: 50px;
+  padding: 0 20px;
+  text-align: center;
+  line-height: 50px;
+  background-color: rgba(67, 75, 86, 0.3);
+  border: 3px solid white;
+  cursor: pointer;
+  color: white;
+  font-size: 26px;
+  font-weight: 900;
+  transition: 0.3s;
 }
 
 .text .btn:hover {
-    background-color: white;
-    color: #434B56;
+  background-color: white;
+  color: #434b56;
 }
 
 .about {
-    height: 50vh;
-    position: relative;
+  height: 50vh;
+  position: relative;
 }
 
 .about .wrap {
-    position: absolute;
-    top: 100px;
-    right: 50px;
-    width: 800px;
+  position: absolute;
+  top: 100px;
+  right: 50px;
+  width: 800px;
 }
 
 .about h1 {
-    position: absolute;
-    right: 20px;
-    font-size: 40px;
+  position: absolute;
+  right: 20px;
+  font-size: 40px;
 }
 
 .wrap h1 div {
-    position: relative;
-    width: 100px;
-    top: 0;
-    left: -20px;
-    height: 3px;
-    background-color: black;
+  position: relative;
+  width: 100px;
+  top: 0;
+  left: -20px;
+  height: 3px;
+  background-color: black;
 }
 
 .about p {
-    position: absolute;
-    top: 90px;
-    font-size: 20px;
-    letter-spacing: 2px;
+  position: absolute;
+  top: 90px;
+  font-size: 20px;
+  letter-spacing: 2px;
 }
 
 .projects {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .projects h1 {
-    position: relative;
-    font-size: 40px;
-    margin: 100px 0 100px 50px;
+  position: relative;
+  font-size: 40px;
+  margin: 100px 0 100px 50px;
 }
-.header h1 div  {
-    position: absolute;
-    left: -20px;
-    width: 100px;
-    height: 3px;
-    background-color: black;
+.header h1 div {
+  position: absolute;
+  left: -20px;
+  width: 100px;
+  height: 3px;
+  background-color: black;
 }
 
 .projects .gallery {
-    display: flex;
-    width: 75vw;
-    margin: 0 auto;
-    flex-wrap: wrap;   
+  display: flex;
+  width: 75vw;
+  margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .gallery .photo {
-    width: 25vw;
-    height: 25vw;
-    border: 1px solid black; 
-    cursor: pointer;   
+  width: 25vw;
+  height: 25vw;
+  border: 1px solid black;
+  cursor: pointer;
 }
 
 .photo div {
-    width: 25vw;
-    height: 0;
-    background-color: #434B56;
-    opacity: .6;
-    transition: .5s;
-    z-index: 1;
-    
-}
-
-.gallery .photo:hover div {
-    height: 25vw;
-}
-
-.gallery .photo:nth-child(1) {
-    background-image: url(/images/natural-goods-berlin-L6NP4ZGnpSY-unsplash.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-.gallery .photo:nth-child(2) {
-    background-image: url(/images/natural-goods-berlin-SiOhyoER3kE-unsplash.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-.gallery .photo:nth-child(3) {
-    background-image: url(/images/gerrie-van-der-walt-m3TYLFI_mDo-unsplash.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-.gallery .photo:nth-child(4) {
-    background-image: url(/images/martti-leetsar-nIuyp2TGWrw-unsplash.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-.gallery .photo:nth-child(5) {
-    background-image: url(/images/table1.jpeg);
-    background-size: cover;
-    background-position: center;
-}
-
-.gallery .photo:nth-child(6) {
-    background-image: url(/images/table2.jpeg);
-    background-size: cover;
-    background-position: center;
-}
-
-.contact {
-    height: 50vh;
-}
-
-.contact div h1 {
-    position: absolute;
-    right: 20px;
-    font-size: 40px;
-    margin: 100px 0 100px 50px;
-}
-.contect .wrap h1 div  {
-    position: absolute;
-    left: -20px;
-    width: 100px;
-    height: 3px;
-    background-color: black;
+  width: 25vw;
+  height: 0;
+  background-color: #434b56;
+  opacity: 0.6;
+  transition: 0.5s;
+  z-index: 1;
 }
 
 footer {
-    height: 100px;
-    width: 100%;
-    background-color: black;
-    box-shadow:  3px 0 30px 5px #050A0D;
+  height: 100px;
+  width: 100%;
+  background-color: black;
+  box-shadow: 3px 0 30px 5px #202020;
 }
